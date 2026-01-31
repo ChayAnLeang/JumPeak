@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gains_boro_or_dark"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    tools:context=".presentation.ui.parties.activity.AddPartiesActivity">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/mtb"
+        android:paddingTop="30dp"
+        app:titleMarginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:titleTextColor="@color/black_or_white"
+        android:background="@color/white_or_black"
+        app:navigationIcon="@drawable/ic_arrow_back"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/div"
+        android:padding="15dp"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white_or_black">
+
+        <RadioGroup
+            android:layout_height="30dp"
+            android:id="@+id/rgPartiesType"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:textSize="15sp"
+                android:layout_width="0dp"
+                android:id="@+id/rbDebtor"
+                android:layout_weight="1.5"
+                app:buttonTint="@color/grey"
+                android:layout_height="wrap_content"
+                android:text="@string/people_who_owe_me"/>
+
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:textSize="15sp"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                app:buttonTint="@color/grey"
+                android:id="@+id/rbCreditor"
+                android:text="@string/people_i_owe"
+                android:layout_height="wrap_content" />
+        </RadioGroup>
+
+        <TextView
+            android:textSize="15sp"
+            android:id="@+id/tvName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/name_required"
+            android:textColor="@color/black_or_white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tietName"
+            app:layout_constraintBottom_toBottomOf="@id/tietName"/>
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:textSize="15sp"
+            android:inputType="text"
+            android:layout_width="0dp"
+            android:id="@+id/tietName"
+            android:layout_marginStart="5dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:backgroundTint="@color/black_or_white"
+            app:layout_constraintStart_toEndOf="@id/tvName"
+            android:textCursorDrawable="@drawable/cursor_color"
+            app:layout_constraintTop_toBottomOf="@id/rgPartiesType"/>
+
+        <TextView
+            android:textSize="15sp"
+            android:id="@+id/tvPhoneNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black_or_white"
+            android:text="@string/phone_number_required"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tietPhoneNumber"
+            app:layout_constraintBottom_toBottomOf="@id/tietPhoneNumber"/>
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:textSize="15sp"
+            android:inputType="phone"
+            android:layout_width="0dp"
+            android:layout_marginStart="5dp"
+            android:id="@+id/tietPhoneNumber"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:backgroundTint="@color/black_or_white"
+            app:layout_constraintTop_toBottomOf="@id/tietName"
+            android:textCursorDrawable="@drawable/cursor_color"
+            app:layout_constraintStart_toEndOf="@id/tvPhoneNumber" />
+
+        <TextView
+            android:textSize="15sp"
+            android:id="@+id/tvDebtAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black_or_white"
+            android:text="@string/debt_amount_required"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tietDebtAmount"
+            app:layout_constraintBottom_toBottomOf="@id/tietDebtAmount"/>
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:textSize="15sp"
+            android:layout_width="0dp"
+            android:id="@+id/tietDebtAmount"
+            android:layout_marginStart="5dp"
+            android:inputType="numberDecimal"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toStartOf="@id/tvUSD"
+            android:backgroundTint="@color/black_or_white"
+            android:textCursorDrawable="@drawable/cursor_color"
+            app:layout_constraintStart_toEndOf="@id/tvDebtAmount"
+            app:layout_constraintTop_toBottomOf="@id/tietPhoneNumber"/>
+
+        <TextView
+            android:id="@+id/tvUSD"
+            android:textSize="15sp"
+            android:text="@string/usd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tvDebtAmount"/>
+
+        <TextView
+            android:textSize="15sp"
+            android:id="@+id/tvNote"
+            android:text="@string/note_if_any"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black_or_white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tietNote"
+            app:layout_constraintBottom_toBottomOf="@id/tietNote"/>
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:textSize="15sp"
+            android:inputType="text"
+            android:layout_width="0dp"
+            android:id="@+id/tietNote"
+            android:layout_marginStart="5dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:backgroundTint="@color/black_or_white"
+            app:layout_constraintStart_toEndOf="@id/tvNote"
+            android:textCursorDrawable="@drawable/cursor_color"
+            app:layout_constraintTop_toBottomOf="@id/tietDebtAmount"/>
+
+        <TextView
+            android:textSize="15sp"
+            android:id="@+id/tvDateTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/date_time_required"
+            android:textColor="@color/black_or_white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tietDateTime"
+            app:layout_constraintBottom_toBottomOf="@id/tietDateTime"/>
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:textSize="15sp"
+            android:clickable="false"
+            android:focusable="false"
+            android:layout_width="0dp"
+            android:id="@+id/tietDateTime"
+            android:layout_marginStart="5dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:backgroundTint="@color/black_or_white"
+            app:layout_constraintTop_toBottomOf="@id/tietNote"
+            app:layout_constraintStart_toEndOf="@id/tvDateTime" />
+
+        <com.google.android.material.button.MaterialButton
+            android:alpha="0.5"
+            app:cornerRadius="5dp"
+            android:enabled="false"
+            android:id="@+id/mbtSave"
+            android:text="@string/save"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:textColor="@color/white_or_black"
+            android:backgroundTint="@color/black_or_white"
+            app:layout_constraintTop_toBottomOf="@id/tietDateTime"/>
+
+        <ProgressBar
+            android:id="@+id/pb"
+            android:visibility="gone"
+            android:layout_height="40dp"
+            android:layout_width="match_parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:indeterminateTint="@color/black_or_white" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>
