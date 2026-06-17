@@ -8,17 +8,17 @@ class ThemeUtil(context: Context) {
     private val key = "theme_mode"
     private val prefs = context.getSharedPreferences("app_prefs",Context.MODE_PRIVATE)
 
-    fun applyTheme() {
-        val themeMode = prefs.getInt(key, AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
+    fun applyTheme(){
+        val themeMode = getMode()
         AppCompatDelegate.setDefaultNightMode(themeMode)
     }
 
-    fun setTheme(mode: Int) {
-        prefs.edit { putInt(key, mode) }
+    fun setTheme(mode:Int){
+        prefs.edit { putInt(key,mode) }
         AppCompatDelegate.setDefaultNightMode(mode)
     }
 
-    fun getMode(): Int {
-        return prefs.getInt(key, AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
+    fun getMode():Int{
+        return prefs.getInt(key,AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
     }
 }

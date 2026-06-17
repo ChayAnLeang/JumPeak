@@ -5,8 +5,8 @@ import java.text.DecimalFormatSymbols
 import java.util.Locale
 
 object AmountUtil {
-    fun format(amount: Double): String{
-        val decimalFormat = DecimalFormat("#.##", DecimalFormatSymbols(Locale.US))
-        return String.format("%s USD",decimalFormat.format(amount))
+    fun format(amount: Double,symbol: String = ""): String{
+        val decimalFormat = DecimalFormat("#,###.##", DecimalFormatSymbols(Locale.US))
+        return "${decimalFormat.format(amount)} $symbol"
     }
 }

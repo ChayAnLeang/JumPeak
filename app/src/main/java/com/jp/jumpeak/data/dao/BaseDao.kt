@@ -4,7 +4,6 @@ import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Update
-import com.jp.jumpeak.enums.Action
 
 @Dao
 interface BaseDao<T> {
@@ -17,11 +16,6 @@ interface BaseDao<T> {
     @Delete
     suspend fun delete(obj: T)
 
-    suspend fun manage(action: Action,obj: T){
-        when(action){
-            Action.ADD -> insert(obj)
-            Action.EDIT -> update(obj)
-            Action.DELETE -> delete(obj)
-        }
-    }
+    @Insert
+    suspend fun insertThenReturnId(obj: T) : Long
 }

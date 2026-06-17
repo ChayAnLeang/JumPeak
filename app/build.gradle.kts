@@ -17,8 +17,8 @@ android {
         applicationId = "com.jp.jumpeak"
         minSdk = 24
         targetSdk = 35
-        versionCode = 3
-        versionName = "3.0"
+        versionCode = 8
+        versionName = "8.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -57,8 +57,6 @@ dependencies {
     ksp(libs.hilt.compiler)
     implementation(libs.paging.runtime)
     implementation(libs.room.paging)
-    implementation(libs.jxl)
-    implementation(libs.work)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

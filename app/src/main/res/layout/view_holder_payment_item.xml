@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/paymentItem"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TextView
+        android:textSize="15sp"
+        android:id="@+id/tvDate"
+        android:layout_width="0dp"
+        android:layout_margin="10dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black_white"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/icArrow" />
+
+    <TextView
+        android:textSize="15sp"
+        android:id="@+id/tvPaid"
+        android:layout_width="0dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="10dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black_white"
+        app:layout_constraintEnd_toStartOf="@id/icArrow"
+        app:layout_constraintTop_toBottomOf="@id/tvDate"
+        app:layout_constraintStart_toStartOf="@id/tvDate" />
+
+    <TextView
+        android:textSize="15sp"
+        android:layout_width="0dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="10dp"
+        android:id="@+id/tvPaymentMethod"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black_white"
+        app:layout_constraintEnd_toStartOf="@id/icArrow"
+        app:layout_constraintTop_toBottomOf="@id/tvPaid"
+        app:layout_constraintStart_toStartOf="@id/tvPaid" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/icArrow"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:src="@drawable/ic_arrow_forward_ios"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <View
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:background="@color/black_white"
+        app:layout_constraintTop_toBottomOf="@id/tvPaymentMethod"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

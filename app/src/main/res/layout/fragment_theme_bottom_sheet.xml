@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white_light_black"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".presentation.ui.ThemeBottomSheetFragment"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:padding="15dp"
+        android:id="@+id/llLight"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:textSize="16sp"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:text="@string/light"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black_white"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:visibility="gone"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:id="@+id/icLightCheck"
+            android:src="@drawable/ic_check_circle"/>
+    </LinearLayout>
+
+    <View
+        android:layout_height="1dp"
+        android:layout_width="match_parent"
+        android:background="@color/black_white"/>
+
+    <LinearLayout
+        android:padding="15dp"
+        android:id="@+id/llDark"
+        android:orientation="horizontal"
+        android:layout_marginVertical="1dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:textSize="16sp"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:text="@string/dark"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black_white"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:visibility="gone"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:id="@+id/icDarkCheck"
+            android:src="@drawable/ic_check_circle"/>
+    </LinearLayout>
+
+    <View
+        android:layout_height="1dp"
+        android:layout_width="match_parent"
+        android:background="@color/black_white"/>
+
+    <LinearLayout
+        android:padding="15dp"
+        android:id="@+id/llFollowSystem"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:textSize="16sp"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:text="@string/follow_system"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black_white"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:visibility="gone"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:id="@+id/icFollowSystemCheck"
+            android:src="@drawable/ic_check_circle"/>
+    </LinearLayout>
+</LinearLayout>

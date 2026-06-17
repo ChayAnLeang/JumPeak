@@ -1,11 +1,11 @@
 package com.jp.jumpeak.di
 
-import com.jp.jumpeak.data.repository.PartiesRepository
-import com.jp.jumpeak.data.repository.ReminderRepository
-import com.jp.jumpeak.data.repository.TransactionRepository
-import com.jp.jumpeak.data.repositoryImpl.PartiesRepositoryImpl
-import com.jp.jumpeak.data.repositoryImpl.ReminderRepositoryImpl
-import com.jp.jumpeak.data.repositoryImpl.TransactionRepositoryImpl
+import com.jp.jumpeak.data.repository.CustomerRepository
+import com.jp.jumpeak.data.repository.InvoiceRepository
+import com.jp.jumpeak.data.repository.PaymentRepository
+import com.jp.jumpeak.data.repositoryImpl.CustomerRepositoryImpl
+import com.jp.jumpeak.data.repositoryImpl.InvoiceRepositoryImpl
+import com.jp.jumpeak.data.repositoryImpl.PaymentRepositoryImpl
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -17,19 +17,13 @@ import javax.inject.Singleton
 abstract class RepositoryModule {
     @Binds
     @Singleton
-    abstract fun bindPartiesRepository(
-        partiesRepositoryImpl: PartiesRepositoryImpl
-    ): PartiesRepository
+    abstract fun bindPaymentRepository(paymentRepositoryImpl: PaymentRepositoryImpl): PaymentRepository
 
     @Binds
     @Singleton
-    abstract fun bindReminderRepository(
-        reminderRepositoryImpl: ReminderRepositoryImpl
-    ): ReminderRepository
+    abstract fun bindInvoiceRepository(invoiceRepositoryImpl: InvoiceRepositoryImpl): InvoiceRepository
 
     @Binds
     @Singleton
-    abstract fun bindTransactionRepository(
-        transactionRepositoryImpl: TransactionRepositoryImpl
-    ): TransactionRepository
+    abstract fun bindCustomerRepository(customerRepositoryImpl: CustomerRepositoryImpl): CustomerRepository
 }

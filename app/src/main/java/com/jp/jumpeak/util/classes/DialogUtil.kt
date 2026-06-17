@@ -11,24 +11,15 @@ class DialogUtil(val context: Context){
             .setTitle(context.getString(R.string.delete))
             .setMessage(context.getString(R.string.delete_message))
             .setNegativeButton(context.getString(R.string.no)){ dialog, _ -> dialog.dismiss() }
-            .setPositiveButton(context.getString(R.string.yes)) { dialog, _ -> block() }
+            .setPositiveButton(context.getString(R.string.yes)) { _, _ -> block() }
             .show()
     }
 
-    fun showError(message: String?) {
+    fun showMessage(message: String?,isErrorMode: Boolean = true) {
+        if(isErrorMode) dialog.setTitle(context.getString(R.string.error))
         dialog
-            .setTitle(context.getString(R.string.error))
             .setMessage(message ?: "Unknown Error")
-            .setPositiveButton(context.getString(R.string.cancel)) { dialog , _ -> dialog.dismiss() }
-            .show()
-    }
-
-    fun showConfirm(message: String,block: () -> Unit) {
-        dialog
-            .setTitle(context.getString(R.string.congratulation))
-            .setMessage(message)
-            .setNegativeButton(context.getString(R.string.cancel)){ dialog, _ -> dialog.dismiss() }
-            .setPositiveButton(context.getString(R.string.confirm)) { dialog , _ -> block() }
+            .setPositiveButton(context.getString(R.string.cancel)) { dialog, _ -> dialog.dismiss() }
             .show()
     }
 }

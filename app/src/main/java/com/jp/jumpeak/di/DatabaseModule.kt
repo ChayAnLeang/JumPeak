@@ -2,11 +2,11 @@ package com.jp.jumpeak.di
 
 import android.content.Context
 import androidx.room.Room
-import com.jp.jumpeak.data.dao.PartiesDao
-import com.jp.jumpeak.data.dao.ReminderDao
-import com.jp.jumpeak.data.dao.TransactionDao
-import com.jp.jumpeak.data.db.JumPeakDatabase
-import com.jp.jumpeak.data.migration.MIGRATION_1_2
+import com.jp.jumpeak.data.dao.CustomerDao
+import com.jp.jumpeak.data.dao.InvoiceDao
+import com.jp.jumpeak.data.dao.ItemDao
+import com.jp.jumpeak.data.dao.PaymentDao
+import com.jp.jumpeak.data.db.KotBungDatabase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -19,29 +19,35 @@ import javax.inject.Singleton
 object DatabaseModule {
     @Provides
     @Singleton
-    fun provideDatabase(@ApplicationContext context: Context): JumPeakDatabase {
+    fun provideDatabase(@ApplicationContext context: Context): KotBungDatabase {
         return Room.databaseBuilder(
             context.applicationContext,
-            JumPeakDatabase::class.java,
-            "jum_peak_db"
-        ).addMigrations(MIGRATION_1_2).build()
+            KotBungDatabase::class.java,
+            "kot_bung_db"
+        ).fallbackToDestructiveMigration(true).build()
     }
 
     @Provides
     @Singleton
-    fun providePartiesDao(db: JumPeakDatabase): PartiesDao{
-        return db.partiesDao()
+    fun provideItemDao(db: KotBungDatabase): ItemDao{
+        return db.itemDao()
     }
 
     @Provides
     @Singleton
-    fun provideReminderDao(db: JumPeakDatabase): ReminderDao{
-        return db.reminderDao()
+    fun providePaymentDao(db: KotBungDatabase): PaymentDao{
+        return db.paymentDao()
     }
 
     @Provides
     @Singleton
-    fun provideTransactionDao(db: JumPeakDatabase): TransactionDao{
-        return db.transactionDao()
+    fun provideInvoiceDao(db: KotBungDatabase): InvoiceDao{
+        return db.invoiceDao()
+    }
+
+    @Provides
+    @Singleton
+    fun provideCustomerDao(db: KotBungDatabase): CustomerDao{
+        return db.customerDao()
     }
 }

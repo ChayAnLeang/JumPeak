@@ -4,9 +4,9 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-abstract class BaseViewModel : ViewModel() {
-    protected val _manage = MutableLiveData<Result<String>>()
-    val manage: LiveData<Result<String>> get() = _manage
-    protected val _export = MutableLiveData<Result<String>>()
-    val export: LiveData<Result<String>> get() = _export
+abstract class BaseViewModel<T> : ViewModel() {
+    protected val _obj = MutableLiveData<Result<T>>()
+    val obj: LiveData<Result<T>> = _obj
+    protected val _message = MutableLiveData<Result<String>>()
+    val message: LiveData<Result<String>> = _message
 }
