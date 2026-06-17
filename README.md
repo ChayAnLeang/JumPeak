@@ -1,7 +1,7 @@
 # About KotBung
 KotBung is a simple and fast invoice maker app for small business owners, freelancers, and anyone who needs to create invoices on the go.
 
-# With KotBung, you can:
+With KotBung, you can:
 . Create invoices in seconds.<br>
 . Managing customers.<br>
 . Track paid and unpaid invoices.<br>
