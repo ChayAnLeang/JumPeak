@@ -1,14 +1,21 @@
-# About JumPeak
-JumPeak is an app for tracking debts(you owe someone or someone owe you). You can manage your debt quickly and easily using this app. JumPeak is 100% free to use, no ads, and offline.
+# About KotBung
+KotBung is a simple and fast invoice maker app for small business owners, freelancers, and anyone who needs to create invoices on the go.
 
-# Feature
-. Intuitive interface, easy to use.<br>
-. Track money owed to/by you.<br>
-. Notifications about debits and credits.<br>
+# With KotBung, you can:
+. Create invoices in seconds.<br>
+. Managing customers.<br>
+. Track paid and unpaid invoices.<br>
+. Save and share invoices as Image.<br>
+. Keep a history of all your invoices.<br>
 
-You will never forget to pay for your debt or recover the debt. This app can be used to maintain your credit and manage debt. Replace your traditional ledger with this digital ledger debt book with notifications and reminders.
-The list of debts and tracking your money is very convenient to keep it in the phone, as it is always at your hand.
+No internet connection needed. No complicated setup. Just open the app, fill in your details, and create an invoice instantly.
 
-Tech Stack : Kotlin , Room db , Coroutine , LiveData , Hilt , MVVM Pattern , Work Manager , XML. <br>
+Perfect for:
+. Freelancers
+. Small shop owners
+. Contractors
+. Service providers
+
+Tech Stack : Kotlin , Room db , Coroutine , LiveData , Hilt , MVVM Pattern , XML. <br>
 
 play store : https://play.google.com/store/apps/details?id=com.jp.jumpeak
